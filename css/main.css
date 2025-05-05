@@ -1,0 +1,63 @@
+.body-catalogo{
+    background-color: rgb(255, 230, 230);
+}
+
+.body-cart{
+    background-color: antiquewhite;
+}
+
+.titulo{
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 35px;
+}
+
+.h-producto{
+    font-size: 30px;
+    font-style: normal;
+    text-decoration: underline;
+    text-transform: uppercase
+}
+
+.p-producto{
+    font-size: 25px;
+}
+
+.agregarProducto{
+    padding: 20px;
+    font-size: 15px;
+}
+
+#catalogo-productos{
+    display: flex;
+    flex-direction: row;
+}
+
+.p-unidades{
+    font-size: 18px;
+}
+
+.restarProducto{
+    font-size: 20px;
+    background-color: rgb(238, 97, 97);
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sumarProducto{
+    font-size: 20px;
+    background-color: green;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.h-total{
+    font-size: 30px;
+    font-style: oblique;
+}

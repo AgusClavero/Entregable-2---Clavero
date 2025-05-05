@@ -1,33 +1,38 @@
 const productos= [
     {
         id: 0, 
-        nombre: "televisor", 
-        precio: 5000,
-        cantidad: 0
+        nombre: "Televisor", 
+        precio: 6000,
+        cantidad: 0,
+        imagen: "./img/smart-tv.jpg"
     },
     {
         id: 1, 
-        nombre: "lavarropas", 
-        precio: 8000,
-        cantidad: 0
+        nombre: "Lavarropas", 
+        precio: 9000,
+        cantidad: 0,
+        imagen: "./img/lavarropas.jpg"
     },
     {
         id: 2, 
-        nombre: "microondas", 
-        precio: 2000,
-        cantidad: 0
+        nombre: "Microondas", 
+        precio: 4000,
+        cantidad: 0,
+        imagen: "./img/microondas.png"
     },
     {
         id: 3, 
-        nombre: "secadora", 
-        precio: 4000,
-        cantidad: 0
+        nombre: "Secadora", 
+        precio: 5000,
+        cantidad: 0,
+        imagen: "./img/secadora.jpg"
     },
     {
         id: 4, 
-        nombre: "cocina", 
-        precio: 13000,
-        cantidad: 0
+        nombre: "Cocina", 
+        precio: 11000,
+        cantidad: 0,
+        imagen: "./img/cocina.png"
     },
 ]
 
@@ -37,8 +42,9 @@ let catalogoProductos = document.getElementById("catalogo-productos")
 function listaProductos(productosArray) {
     productosArray.forEach(producto => {
         const card = document.createElement("div")
-        card.innerHTML = `<h3>${producto.nombre}</h3>
-                          <p>$${producto.precio}</p>
+        card.innerHTML = `<h3 class="h-producto">${producto.nombre}</h3>
+                          <img src="${producto.imagen}">
+                          <p class="p-producto">$${producto.precio}</p>
                           <button class="agregarProducto" id="${producto.id}"> Agregar </button>`
         catalogoProductos.appendChild(card)
     })
@@ -53,26 +59,19 @@ function agregarAlCarrito (arrayProductos) {
         button.onclick = (e) => {
             const idProducto = e.currentTarget.id
             const seleccionProducto = productos.find(producto => producto.id == idProducto)
-            
-            console.log(idProducto)
 
             const index = carritoProductos.findIndex((elemento) => elemento.id == idProducto)
 
-              console.log(index)
 
               if (index !== -1) {
                     carritoProductos[index].cantidad += 1
                     
-                    console.log("ID encontrado")
-                   
                } else {
-                    console.log("ID no encontrado")
                     productos[idProducto].cantidad += 1
                     carritoProductos.push(seleccionProducto)
                     
                }
 
-            console.log(carritoProductos)
             localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
         }
         
