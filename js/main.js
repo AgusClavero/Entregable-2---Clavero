@@ -65,12 +65,10 @@ function agregarAlCarrito () {
 
               if (index !== -1) {
                     carritoProductos[index].cantidad += 1
-                    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
                     
                } else {
                     productos[idProducto].cantidad += 1
                     carritoProductos.push(seleccionProducto)
-                    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
                     
                }
 
@@ -78,5 +76,5 @@ function agregarAlCarrito () {
         }
         
     })
-    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
+
 }
