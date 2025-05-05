@@ -48,12 +48,12 @@ function listaProductos(productosArray) {
                           <button class="agregarProducto" id="${producto.id}"> Agregar </button>`
         catalogoProductos.appendChild(card)
     })
-    agregarAlCarrito(productos)
+    agregarAlCarrito()
 }
 
 listaProductos(productos)
 
-function agregarAlCarrito (arrayProductos) {
+function agregarAlCarrito () {
     addButton = document.querySelectorAll(".agregarProducto")
     addButton.forEach(button => {
         button.onclick = (e) => {
@@ -65,10 +65,12 @@ function agregarAlCarrito (arrayProductos) {
 
               if (index !== -1) {
                     carritoProductos[index].cantidad += 1
+                    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
                     
                } else {
                     productos[idProducto].cantidad += 1
                     carritoProductos.push(seleccionProducto)
+                    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
                     
                }
 
@@ -76,4 +78,5 @@ function agregarAlCarrito (arrayProductos) {
         }
         
     })
+    localStorage.setItem("carritoProductos", JSON.stringify(carritoProductos))
 }

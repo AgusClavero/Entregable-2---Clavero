@@ -1,8 +1,7 @@
 let sectionCarrito = document.getElementById("section-carrito")
 let mostrarTotal = document.getElementById("mostrar-total")
 
-const carritoStorage= JSON.parse(localStorage.getItem("carritoProductos")) || []
-
+const carritoStorage = JSON.parse(localStorage.getItem("carritoProductos")) || []
 
 function listaCarrito (carritoItems) {
     carritoItems.forEach (producto => {
@@ -12,15 +11,13 @@ function listaCarrito (carritoItems) {
                           <p class="p-unidades">Unidades:${producto.cantidad}</p>
                           <button class="restarProducto" id="${producto.id}"> - </button>
                           <button class="sumarProducto" id="${producto.id}"> + </button>`
-        
         sectionCarrito.appendChild(cart)
     })
- 
+
 }
 
-if(carritoStorage.length > 0){
     listaCarrito(carritoStorage)
-}
+
 
 function sumarProducto() {
     addButton = document.querySelectorAll(".sumarProducto")
