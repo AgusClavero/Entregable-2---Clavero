@@ -18,9 +18,8 @@ function listaCarrito (carritoItems) {
 
     listaCarrito(carritoStorage)
 
-
 function sumarProducto() {
-    addButton = document.querySelectorAll(".sumarProducto")
+    const addButton = document.querySelectorAll(".sumarProducto")
     addButton.forEach(button => {
         button.onclick = (e) => {
             const idProducto = e.currentTarget.id
@@ -38,7 +37,7 @@ function sumarProducto() {
 }
 
 function restarProducto() {
-    addButton = document.querySelectorAll(".restarProducto")
+    const addButton = document.querySelectorAll(".restarProducto")
     addButton.forEach(button => {
         button.onclick = (e) => {
             const idProducto = e.currentTarget.id

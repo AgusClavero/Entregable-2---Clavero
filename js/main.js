@@ -54,7 +54,7 @@ function listaProductos(productosArray) {
 listaProductos(productos)
 
 function agregarAlCarrito () {
-    addButton = document.querySelectorAll(".agregarProducto")
+    const addButton = document.querySelectorAll(".agregarProducto")
     addButton.forEach(button => {
         button.onclick = (e) => {
             const idProducto = e.currentTarget.id
